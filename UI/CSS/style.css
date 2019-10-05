@@ -7,7 +7,7 @@ body{
     
 }
 
-.image{
+.main{
     background-image: url("../assets/notebook-2465914_960_720.jpg");
     background-size: cover;
     height: 95vh;
@@ -19,7 +19,7 @@ body{
     text-align: center;
     justify-items: center; 
     flex-wrap: wrap;
-    justify-content:flex-end;
+    float: right;
 } 
 
 .logo{
@@ -48,11 +48,11 @@ ul li a{
     text-transform: uppercase;
       padding: 20px; 
       margin-left:100px; 
-      margin-right: 0px;
+      margin-right: 30px;
       
 }
 ul li a:hover{
-  color: bisque;
+  color: rgb(55, 102, 55);
 }
 
 .container{
@@ -75,12 +75,14 @@ flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     display: flex;
-    color: black;  
+    color: black; 
+     
 }
 .container p{
     color: black; 
+    margin-top: 100px;
     margin-bottom: 50px;
-    font-size:25px;
+    font-size:20px;
     font-weight: bold 
 }
 #get-started{
@@ -89,7 +91,8 @@ flex-wrap: wrap;
     width: 180px;
     height: 40px;
     display: flex;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     
 }
 
@@ -120,6 +123,7 @@ flex-wrap: wrap;
     max-width: 100%;
     height: auto;   
     justify-content: center;
+    margin-top: 0px;
 
 }
 .colors{
@@ -141,7 +145,6 @@ flex-wrap: wrap;
 list-style-type: none;
 padding: 10px;
 font-size: 15px;
-margin-top: 5px;
 color: black;
 justify-content: start;
 display: inline-block;
@@ -152,7 +155,7 @@ display: inline-block;
     justify-content:flex-end;
     font-size: 25px;
     text-align: start;
-    margin-top: 10px;
+  
 }
 
 .contact li{
@@ -195,5 +198,58 @@ max-width: 20%;
  .last p{
     color:white;
  }
+
+ /*sign up and sign in*/
+ 
+ .wraps{
+     max-width: 400px; 
+    border-radius: 20px;
+    margin: auto;
+    background: #546354;
+    box-sizing: border-box;
+    padding: 40px;
+    color: #ddd;
+    margin-top:250px;
+    
+    margin-bottom: 100px; 
+}
+.wraps h2{
+    text-transform: uppercase;
+    color: black;
+}
+
+input[type=text],input[type=password], input[type=email]{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 5px;
+    background: rgba(0,0,0,0.10); 
+    outline:none;
+    border: none;
+    border-bottom: dotted #fff;
+    color: white;
+    margin: 2px;
+    font-weight: bold;
+}
+    .types{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-top: 20px;
+    outline:none;
+    border: none;
+    background: rgb(31, 102, 31);
+    opacity: 0.9;
+    border-radius: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.types a:hover{
+    opacity: 0.7;
+    color: white;
+}
+.types a{
+    text-decoration: none;
+    color: #fff;
+}
 
  
