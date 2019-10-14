@@ -66,5 +66,40 @@ static viewallEntry(req, res) {
         });
   
     };
+
+    static editEntry(req, res){
+       const id = parseInt(req.params.id);
+       let diarieFound;
+       let itemIndex;
+       diaries.find((dairie, index) => {
+         if (dairie.id === id) {
+           diarieFound = dairie;
+           itemIndex = index;
+         }
+       });
+       if (!diarieFound) {
+         return res.status(404).send({
+           status:404,
+           message: 'diary not found',
+         });
+       }
+     
+     
+       const updateddairie = {
+         id: diarieFound.id,
+         title: req.body.title || diarieFound.title,
+         content: req.body.content || diarieFound.content,
+         date:moment().format('LL') || diarieFound.date,
+         description: req.body.description || diarieFound.description,
+       };
+     
+       diaries.splice(itemIndex, 1, updateddairie);
+     
+       return res.status(200).send({
+         status:200,
+         message: 'dairy modified successfully',
+         updateddairie,
+       });
+     };
 }
 export default myDiary;
