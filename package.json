@@ -1,0 +1,32 @@
+{
+  "name": "mydiary",
+  "version": "1.0.0",
+  "description": "MyDiary is an online journal where users can pen down their thoughts and feelings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js ",
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claudinee11/MyDiary.git"
+  },
+  "author": "Claudine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Claudinee11/MyDiary/issues"
+  },
+  "homepage": "https://github.com/Claudinee11/MyDiary#readme",
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
