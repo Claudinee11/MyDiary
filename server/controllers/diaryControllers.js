@@ -31,10 +31,7 @@ static viewallEntry(req, res) {
   }
 
   static addnewEntry(req, res){
-    // const { error } = validateEntry.validate(req.body);
-    // if (error) {
-    //   return res.status(400).json({ status: 400, error: error.details[0].message });
-    // }
+    
       const diary = {    
         id: diaries.length + 1,
       title: req.body.title,
@@ -48,6 +45,26 @@ static viewallEntry(req, res) {
       message: 'diary added successfully',
       diaries,
     });
+    };
+
+    static deleteEntry(req, res){
+      const id = parseInt(req.params.id);
+   
+      const diaryToDelete = diaries.find((dairy) => dairy.id === id);
+      if (diaryToDelete) {
+        const index = diaries.indexOf(diaryToDelete)
+          diaries.splice(index, 1);
+           return res.status(200).send({
+             status:200,
+             message: 'diary deleted successfuly',
+           });
+      }
+    
+        return res.status(404).send({
+        status:404,
+          message: 'diary was not found',
+        });
+  
     };
 }
 export default myDiary;
