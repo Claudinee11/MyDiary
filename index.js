@@ -1,5 +1,6 @@
 import bodyParser from 'body-parser';
 import route from './server/routers/diaryRouters';
+import user from './server/routers/buserRoute';
 
 
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.use('/', route);
+app.use('/', user);
 
 
 
