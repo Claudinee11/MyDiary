@@ -44,7 +44,7 @@ class myDiary{
 
         const userLogin= mydiaryUser.find((users) => (users.email===email) 
         && (decryptPassord(password, users.password)));
-        if(!userLogin){
+        if(userLogin){
             return res.status(401).json({
                 status:401,
                 error:'Invalid password or Email'
