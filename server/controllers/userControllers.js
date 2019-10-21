@@ -35,6 +35,31 @@ class myDiary{
             }
         });
     }
+
+    static diaryLogin(req,res){
+        const{
+            email,
+            password
+        }= req.body;
+
+        const userLogin= mydiaryUser.find((users) => (users.email===email) 
+        && (decryptPassord(password, users.password)));
+        if(!userLogin){
+            return res.status(401).json({
+                status:401,
+                error:'Invalid password or Email'
+            });
+        }
+        const token = tokenGenerated(email);
+        return res.status(201).json({
+            status:201,
+            message: ' login successfully',
+            data: {
+                token
+            }
+        });
+
+    }
 }
 
 
