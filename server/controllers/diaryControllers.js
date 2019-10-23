@@ -11,7 +11,7 @@ static viewallEntry(req, res) {
       message: 'diary retrieved successfully',
        diaries,
     });
-  };
+  }
 
   static getspecificEntry(req, res){
     const id = parseInt(req.params.id);
@@ -45,7 +45,7 @@ static viewallEntry(req, res) {
       message: 'diary added successfully',
       diaries,
     });
-    };
+    }
 
     static deleteEntry(req, res){
       const id = parseInt(req.params.id);
@@ -65,7 +65,7 @@ static viewallEntry(req, res) {
           message: 'diary was not found',
         });
   
-    };
+    }
 
     static editEntry(req, res){
        const id = parseInt(req.params.id);
@@ -100,6 +100,6 @@ static viewallEntry(req, res) {
          message: 'dairy modified successfully',
          updateddairie,
        });
-     };
+     }
 }
 export default myDiary;
