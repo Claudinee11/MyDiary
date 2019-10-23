@@ -1,15 +1,14 @@
 import express from 'express';
 
-import myDiary from '../controllers/diaryControllers';
+import myDiaryEntries from '../controllers/diaryControllers';
+import auth from '../midleware/auth';
+
 
 const app = express.Router();
 
+app.post('/api/v1/entries',auth, myDiaryEntries.addEntries);
 
-app.get('/api/v1/entries', myDiary.viewallEntry);
-app.get('/api/v1/entries/:id', myDiary.getspecificEntry);
-app.post('/api/v1/entries', myDiary.addnewEntry);
-app.delete('/api/v1/entries/:id', myDiary.deleteEntry);
-app.put('/api/v1/entries/:id', myDiary.editEntry);
+
 
 
 export default app; 
