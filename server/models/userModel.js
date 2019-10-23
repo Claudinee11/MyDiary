@@ -4,7 +4,7 @@ class Diaries {
         this.id= id;
         this.firstname= firstname;
         this.lastname= lastname;
-        this.emal= email;
+        this.email= email;
         this.password= password;
     }
 }

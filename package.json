@@ -4,9 +4,10 @@
   "description": "MyDiary is an online journal where users can pen down their thoughts and feelings",
   "main": "index.js",
   "scripts": {
-    "test":"mocha --require @babel/register ./server/tests/*.spec.js --exit",
+    "test": "mocha --require @babel/register ./server/tests/*.spec.js --exit",
     "start": "babel-node index.js ",
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node index.js",
+    "lint": "eslint ./server"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
     "bcrypt": "^3.0.6",
     "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^6.5.1",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.3"
   }
