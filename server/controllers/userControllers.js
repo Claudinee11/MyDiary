@@ -1,13 +1,19 @@
 
 import Diaries from '../models/userModel';
-
+import Diarypassword from '../helpers/password';
 import tokenGenerated from '../helpers/token';
 
 
-const mydiaryUser = [];
+export const mydiaryUser =
+    [
+        {
+            Email: 'niyonsabacoco12500@gmail.com',
+            password: '12coco'
+        }
+    ]
 
 class myDiary {
-    static createAccount(req, res) {
+    static async createAccount(req, res) {
         const {
             firstname,
             lastname,
@@ -26,11 +32,11 @@ class myDiary {
             });
         }
 
+        const userPassword = await Diarypassword.passwordHashed(password);
+        const users = new Diaries(id, firstname, lastname, email, userPassword);
 
-        const users = new Diaries(id, firstname, lastname, email, password);
         const token = tokenGenerated(email);
         mydiaryUser.push(users);
-        console.log(users);
 
         return res.status(201).json({
             status: 201,
@@ -44,21 +50,27 @@ class myDiary {
 
     static diaryLogin(req, res) {
         const {
-            email,
+            Email,
             password
         } = req.body;
 
-         const userLogin = mydiaryUser.find((user) => user.email === email && user.password === password);
-       
+        const userLogin = mydiaryUser.find((user) => (user.Email === Email));
+
+
         if (!userLogin) {
 
-            return res.status(401).json({
-                status: 401,
-                error: 'Invalid password or Email'
+            return res.status(404).json({
+                status: 404,
+                error: 'user are not registered '
             });
         }
-
-        const token = tokenGenerated(email);
+        if (!Diarypassword.decryptPass(password, userLogin.userPassword)) {
+            return res.status(401).json({
+                status: 401,
+                error: 'encorrect password '
+            });
+        }
+        const token = tokenGenerated(Email);
         return res.status(201).json({
             status: 201,
             message: ' login successfully',
@@ -67,8 +79,9 @@ class myDiary {
             }
         });
     }
-
 }
+
+
 
 
 
