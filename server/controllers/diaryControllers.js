@@ -23,6 +23,25 @@ class MyDiaryEntries {
       data: diaryEntries
     });
   }
+  static getAllEntries (req, res) {
+    const entryAuth = decryptEmail(req.header('token'));
+  mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
+    const userEntries = mydiaryEntry.filter((entry) => entry.Email=== entryAuth); 
+      console.log(userEntries);
+    if (!userEntries.length === 0) {
+      return res.status(404).send({
+        status: 404,
+        message: 'entry does not found',
+        
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      message: 'entries retrieved successfully',
+      data: mydiaryEntry
+    });
+  }
+
   static ModifyEntry (req, res)  {
     const {
       title, description,
@@ -55,7 +74,7 @@ class MyDiaryEntries {
 
     return res.status(200).send({
       status: 200,
-      message: 'entry successfully deleted”',
+      message: 'entry successfully edited',
       data: ModifiedEntry,
     });
   }
