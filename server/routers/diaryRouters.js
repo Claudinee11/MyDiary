@@ -10,6 +10,7 @@ const app = express.Router();
 
 app.post('/api/v1/entries', auth, MyDiaryEntries.addEntries);
 app.get('/api/v1/entries', auth, MyDiaryEntries.getAllEntries);
+app.get('/api/v1/entries/:EntriesId', auth, MyDiaryEntries.specificEntries);
 app.patch('/api/v1/entries/:EntriesId', auth, MyDiaryEntries.ModifyEntry);
 
 
