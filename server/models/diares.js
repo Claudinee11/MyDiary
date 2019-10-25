@@ -1,15 +1,11 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-class Diary {
-  constructor ( id, title, date, description) {
-    this.id = id;
-    this.title = title;
-    this.date = date;
-    this.description = description;
+ class Diary {
+  constructor(EntriesId, EntriesTitle, EntriesDate, EntriesDescription, Email) {
+    this.id = EntriesId;
+    this.title = EntriesTitle;
+    this.date = EntriesDate;
+    this.description = EntriesDescription;
+    this.Email = Email;
   }
 }
-    
 
 export default Diary;
