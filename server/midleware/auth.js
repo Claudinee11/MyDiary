@@ -1,10 +1,9 @@
 import { mydiaryUser } from '../controllers/userControllers';
-// import tokenGenerated from '../helpers/token';
+
 import decryptEmail from '../helpers/decrept';
 
 const auth = (req, res, next) => {
   const token = req.headers.token;
-  console.log(token);
   if (!token) {
     return res.status(400).send({
       status: 400,
@@ -12,12 +11,9 @@ const auth = (req, res, next) => {
     });
   }
   try {
-    console.log(token);
     const userEntry = decryptEmail(token);
-    
-  // const id = mydiaryUser.length+1;
-  // const token = tokenGenerated(email)
-    const usersEntry = mydiaryUser.find(user => user.Email === userEntry.Email);
+  
+    const usersEntry = mydiaryUser.find(user => user.Email === userEntry.email);
     console.log(userEntry);
     if (!usersEntry) {
       return res.status(401).send({

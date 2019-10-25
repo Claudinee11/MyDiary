@@ -1,16 +1,9 @@
-
 import Diaries from '../models/userModel';
 import Diarypassword from '../helpers/password';
 import tokenGenerated from '../helpers/token';
 
 
-export const mydiaryUser =
-    [
-        {
-            Email: 'niyonsabacoco12500@gmail.com',
-            password: '12coco'
-        }
-    ]
+export const mydiaryUser = [];
 
 class myDiary {
     static async createAccount(req, res) {
@@ -50,12 +43,11 @@ class myDiary {
 
     static diaryLogin(req, res) {
         const {
-            Email,
+            email,
             password
         } = req.body;
 
-        const userLogin = mydiaryUser.find((user) => (user.Email === Email));
-
+        const userLogin = mydiaryUser.find((user) => (user.email === email));
 
         if (!userLogin) {
 
@@ -64,13 +56,15 @@ class myDiary {
                 error: 'user are not registered '
             });
         }
-        if (!Diarypassword.decryptPass(password, userLogin.userPassword)) {
+        if (!Diarypassword.decryptPass(password, userLogin.password)) {
+
+            console.log(userLogin.userPassword);
             return res.status(401).json({
                 status: 401,
                 error: 'encorrect password '
             });
         }
-        const token = tokenGenerated(Email);
+        const token = tokenGenerated(email);
         return res.status(201).json({
             status: 201,
             message: ' login successfully',
