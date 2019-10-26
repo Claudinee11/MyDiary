@@ -10,13 +10,14 @@ const auth = (req, res, next) => {
       error: 'please enter token',
     });
   }
-  try {
+  try 
+  {
     const userEntry = decryptEmail(token);
   
     const usersEntry = mydiaryUser.find(user => user.Email === userEntry.email);
     console.log(userEntry);
     if (!usersEntry) {
-      return res.status(401).send({
+      return res.status(401).json({
         status: 401,
         error: 'please you are not user',
       });
@@ -25,9 +26,9 @@ const auth = (req, res, next) => {
     next();
    } 
   catch (error) {
-    return res.status(400).json({
-      status: 400,
-       error: error.message
+    return res.status(500).json({
+      status: 500,
+       error: 'checked'
     });
   }
 }
