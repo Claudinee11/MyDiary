@@ -23,56 +23,7 @@ class MyDiaryEntries {
       data: diaryEntries
     });
   }
-  static getAllEntries(req, res) {
-    const entryAuth = decryptEmail(req.header('token'));
-    mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
-    const userEntries = mydiaryEntry.filter((entry) => entry.Email === entryAuth);
-    
-    if (!userEntries.length === 0) {
-      return res.status(404).send({
-        status: 404,
-        message: 'entry does not found',
-
-      });
-    }
-    return res.status(200).send({
-      status: 200,
-      message: 'entries retrieved successfully',
-      data: mydiaryEntry
-    });
-  }
-  static specificEntries(req, res) {
-    const { EntriesId } = req.params;
-   
-    if (isNaN(EntriesId)) {
-      return res.status(400).json({
-        status: 400,
-        error: 'id should be a number '
-      });
-    }
-    const entryAuth = decryptEmail(req.header('token'));
-
-    const specificEntry = mydiaryEntry.find((entry) => entry.id === parseInt(EntriesId, 10));
-    if (!specificEntry) {
-      return res.status(404).send({
-        status: 404,
-        message: 'entries does not found',
-      });
-    }
-    if (specificEntry.Email !== entryAuth) {
-      return res.status(403).send({
-        status: 403,
-        message: 'You are not user',
-      });
-    }
-    return res.status(200).send({
-      status: 200,
-      message: 'entry retrieved successfully',
-      data: specificEntry,
-    });
-  }
-
-  static ModifyEntry(req, res) {
+  static ModifyEntry (req, res)  {
     const {
       title, description,
     } = req.body;
@@ -109,6 +60,56 @@ class MyDiaryEntries {
     });
   }
 
+  static getAllEntries (req, res) {
+    const entryAuth = decryptEmail(req.header('token'));
+  mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
+    const userEntries = mydiaryEntry.filter((entry) => entry.Email=== entryAuth); 
+      console.log(userEntries);
+    if (!userEntries.length === 0) {
+      return res.status(404).send({
+        status: 404,
+        message: 'entry does not found',
+        
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      message: 'entries retrieved successfully',
+      data: mydiaryEntry
+    });
+  }
+
+  static specificEntries (req, res){
+    const { EntriesId } = req.params;
+    console.log(EntriesId);
+    if(isNaN(EntriesId)){
+      return res.status(400).json({
+        status:400,
+        error:'id should be a number '
+      });
+    }
+    const entryAuth = decryptEmail(req.header('token'));
+    console.log(decryptEmail);
+    const specificEntry = mydiaryEntry.find((entry) => entry.id === parseInt(EntriesId, 10)); 
+    if (!specificEntry) {
+      return res.status(404).send({
+        status: 404,
+        message: 'entries does not found',
+      });
+    }
+    if (specificEntry.Email !== entryAuth) {
+      return res.status(403).send({
+        status: 403,
+        message: 'You are not user',
+      });
+    }
+    return res.status(200).send({
+      status: 200,
+      message: 'entry retrieved successfully',
+      data: specificEntry,
+    });
+  }
+
   static deletedEntries (req, res) {
     
     const { EntriesId } = req.params;
@@ -134,12 +135,13 @@ class MyDiaryEntries {
       });
     }
   mydiaryEntry.splice(mydiaryEntry.indexOf(deletEntry), 1);
-    return res.status(200).send({
+       return res.status(200).send({
       status: 200,
       message: 'entry successfully deleted',
       
     });
   }
+ 
 
 
 }
