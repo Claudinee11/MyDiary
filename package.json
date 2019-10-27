@@ -1,0 +1,46 @@
+{
+  "name": "mydiary",
+  "version": "1.0.0",
+  "description": "MyDiary is an online journal where users can pen down their thoughts and feelings",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register ./server/tests/*.spec.js --exit",
+    "start": "babel-node index.js ",
+    "dev": "nodemon --exec babel-node index.js",
+    "lint": "eslint ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Claudinee11/MyDiary.git"
+  },
+  "author": "Claudine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Claudinee11/MyDiary/issues"
+  },
+  "homepage": "https://github.com/Claudinee11/MyDiary#readme",
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "body-parser": "^1.19.0",
+    "bcrypt": "^3.0.6",
+    "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.3"
+  }
+}
