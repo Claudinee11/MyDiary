@@ -11,88 +11,27 @@ body{
     
 }
 
-
-#logo{
-    float: left; 
-    width: 150px;
-     height: auto; 
-    margin-top: 10px;
-    margin-left: 50px;
-
-}
-#logo a{
+ #logo a{
     text-decoration: none;
     color:azure;
     font-weight:italic;
-    font-size: 20px;
+    
+}  
+.NavBar{
+    display: grid;
+    grid-template-columns: 7fr 2fr .4fr;
+    background-color: black;
+    color:#fff;
+    padding:20px;
+    font-size:17px;
 }
-#diarylogo{
-    float: left; 
-    width: 50px;
-     height: auto; 
-    margin-top: 10px;
-    margin-left: 150px;
+.NavBar a {
+text-transform: uppercase;
+text-decoration: none;
+color: azure;
 }
-#diarylogo{
-    text-decoration: none;
-    color:azure;
-    font-weight:italic;
-    font-size: 10px;  
-}
-
-header{
-    background-color: #2e2e38;
-    color: #fff;
-     padding-top: 30px; 
-    min-height: 70px;
-    border-bottom: 2px solid #546354 ;
-    margin-bottom: 200px;
-
-
-}
-.headers{
-    background-color: #2e2e38;
-    color: #fff;
-     padding-top: 30px; 
-    min-height: 70px;
-    border-bottom: 2px solid #546354 ;
-
-
-}
-.headers a{
-    float:right;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 100px;
-    color:azure;
-}
-header a{
-    color: azure;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: bolder;
-
-
-}
-ul a:hover{
-    color:#748074;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: bolder;
-
-}
-ul li{
-    display: inline;
-    padding: 0 60px 0 40px;
-
-}
-
-header nav{
-    display:flex;
-    float: right; 
-    margin-top: 7px;
-
+.NavBar a:hover{
+    color: rgb(77, 226, 77);
 }
 
 #showcase p{
@@ -104,21 +43,24 @@ header nav{
     color: rgb(12, 9, 9);
 }
 .myDiary{
-    text-align-last: center;
-    margin-top: 122px;
+    margin-top: 250px;
     margin-bottom: 40px;
 }
 .welcome a{
+    display: grid;
     padding: 1%;
     background-color:#546354;
     color: white;
     text-transform: uppercase;
     font-size: 15px;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-decoration: none;
-    margin-left:600px;
+    width: 160px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 13px;
    
 }
@@ -137,7 +79,7 @@ header nav{
     box-sizing: border-box;
     padding: 40px;
     color: azure;
-    margin-top:95px;
+    margin-top:200px;
     margin-bottom: 10px; 
 }
 .wraps h2{
@@ -197,15 +139,15 @@ input[type=text],input[type=password], input[type=email]{
     color:white;
 }
 
-/*view all entries*/
-.your-entry {
-    display: flex;
-     margin-top: 30px;  
-    margin-left: 15px;     
+.your-entry{
+    display: grid;
+    grid-template-columns: 3.5fr 3.5fr 3.5fr;
+    margin-top: 30px;  
+    margin-left: 15px; 
 }
 .myEntry{
-    display: flex;
-    margin-top: 20px;  
+display: flex;
+margin-top: 20px;  
    text-align: justify;
    margin-left: 15px; 
    margin-bottom: 0px;  
@@ -214,6 +156,16 @@ input[type=text],input[type=password], input[type=email]{
     background-color: #FFF;
     padding: 30px;
     margin: 0px 10px;   
+}
+.entry-first {
+    justify-content: center;
+    background-color: #FFF;
+    padding: 30px;
+    margin: 0px 10px;
+    margin-left: auto;
+    margin-right: auto; 
+   border-radius: 6px;
+     
 }
 .second {
     background-color: #FFF;
@@ -375,7 +327,6 @@ color: white;
 text-decoration: none;
 color: white;
 }
- 
 .footer{
     display: flex;
     background-color: rgb(145, 146, 149);
