@@ -1,11 +1,39 @@
 *{
     padding: 0;
     margin: 0;
-}
+ }
 body{
-    background-image: url('../assets/notebook-2465914_960_720.jpg');
+    font-family: 'Times New Roman', Times, serif;
+    background-image:linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba(0, 0, 0, 0.5)), url("../assets/italy-1587287_960_720.jpg");
     background-size: cover;
+    min-height: 100vh;
+   
+    
+    
+}  
+html{
+    height:100%;
 }
+.Nav{
+    background-color: rgb(120, 124, 120);
+    color: rgb(154, 159, 177);
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr;
+    
+}
+#btn{
+    padding: 20px;
+    font-size: 19px;
+}
+#btn a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: azure;
+    }
+
+#btn a:hover{
+    color: burlywood;
+} 
 
 .set{
 text-align: center;
@@ -23,20 +51,23 @@ text-align: center;
     border-radius: 50%;
     height: auto; 
     width: auto;
+    margin-top: 5px;
 }
 .setting-class{
-    width: 70%;
-    background-color: rgb(238, 240, 240);
+    width: 60%;
+    color: azure;
+    background-color: rgb(41, 43, 43);
     margin: 0px 28% 0px 16%;
-    height: 100vh;
+    height: 84vh;
 }
 
 .buttons input[type=text],input[type=password]{
     height: 4vh;
-    margin: 10px;
+    margin: 8px;
     background-color: rgb(180, 187, 187);
     border-radius: 6px;
     width: 20vw;
+    
 }
 .edit{
     margin: 15% 0px 0px 0px;
@@ -59,20 +90,27 @@ text-align: center;
 }
 
 .notification-side p{
-    margin: 40px;
+    margin: 20px;
 }
-.save{
-  
+.notifications a{
+    text-decoration: none;
+    color: green;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+  .save{
     display: grid;
     padding:10px;
     grid-template-columns: 5fr 5fr;
+    
 }
-.save button{
+  .save button{
     background: rgb(14, 71, 14);
     width: 15%;
     height: 5vh;
     color: honeydew;
-}  
+}   
 
 input[type="checkbox"]{
     height:20px;
@@ -98,26 +136,30 @@ input[type="checkbox"]:before
     transform: scale(1.1);
     transition: .5s;
     margin-left: 50px;
+   
 
 }
 table, th, td {
-    border: 1px solid black;
+    border: 3px solid azure;
     border-collapse: collapse;
+    
   }
 
   table{
       width: 80%;
       margin:4% 0% 5% 5%;
-      color: #2417ce;
+      color: azure;
   }
 
   th td{
-      width: 2vw;
+      width: 3vw;
+      
   }
 th{
-    background-color: rgb(46, 60, 61);
-    height: 10%;
-    color: #ceddd0;
+    background-color: rgb(26, 167, 177);
+    font-size: 25px;
+    
+    color: azure;
 }
 tr{
     height: 5vh;
@@ -126,14 +168,23 @@ th{
     height: 5vh;
 }
 .list{
-    width: 90%;
+    width: 80%;
+    margin-top: 100px;
+    
 }
+td{
+    font-size: 20px;
+}
+
 
 td a{
     text-decoration: none;
-    color: rgb(29, 15, 6);
+    color: azure;
+    font-size: 30px;
 }
-
+td a:hover{
+    color: rgb(26, 167, 177)
+}
 .dash{
     padding: 10px; 
     border: 0.1px solid #fff;
@@ -148,8 +199,14 @@ td a{
 .entries{
     display: grid;
     grid-template-columns: 1fr 5fr;
-    font-size: 17px;
-    background-color: url('../assets/notebook-2465914_960_720.jpg');
+    
+
+}
+.controls{
+    margin-top: 100px;
+    font-weight: italic;
+    font-size: 20px;
+    text-transform: uppercase;
 }
 .middle-div{
 
@@ -158,13 +215,16 @@ td a{
 }
 
 .dashboard{
-    padding: 10px;
-    margin: 10%;
+    padding: 25px;
+   
     text-align: center;   
 }
 .dashboard a{
     text-decoration:none;
     color: aliceblue;
+}
+.dashboard a:hover{
+    color: bisque;
 }
 #mydiary{
     color: #e7ebf0;
@@ -189,20 +249,41 @@ td a{
     border-radius:5px;
 }
 .saved{
+    
     background-color: #e0e2e9;
     padding: 10px; 
 }
+.helps{
+    background-color: grey;
+    font-family: 'Slabo 10px', serif;  
+}
+.helps p{
+    color: azure;
+    max-width: 80%;
+    font-size: 19px;
+    padding: 20px 7% 20px 10%;
+
+}
+.helps h3{
+    color: rgb(14, 14, 124);
+    margin-left: 50px;
+    margin-top: 80px;
+}
+
+
 .incoming{
-    color: #00324e;
+    
+    color: #1571a7;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 0%;
     right: 10%;
     text-align: center;
 }
 .try {
     background-color: #e0e2e9;
-    padding: 10px;
+    
+    
     font-family: 'Slabo 10px', serif;   
 }
 .try p{
@@ -214,10 +295,11 @@ td a{
 
 }
 .try h3{
-    color:#031925;;
+    color:#0a5b86;
+    margin-left: 10px;
+    margin-top: 20px;
 }
 .get-entries{
-    
     color:#00324e;
     width: 88%;
     height: 12vh auto;
@@ -227,81 +309,48 @@ td a{
     font-size: 19px; 
     
 }
+.get-entries h3{
+margin-left: 20px;
+
+}
+.get-entries p{
+    margin-left: 30px ;
+    margin-right: auto;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.849)
+}
 .welcome{
     color: #00324e;
     font-family:  serif;
-}
-
-.yellow{
-    background-color: rgb(12, 41, 12);
-    width: 20vw;
-    height: 7vh;
-    margin: 90px 10% 20px 13%;
-    padding: 10px;
-    border-radius: 5px;
+    margin-top: 100px;
+    margin-left:150px;
     
-    }
-    .yellow a{
-        text-decoration: none;
-        color:azure;
-    }
-   
-
+}
+.welcome p{
+text-align: center;
+font-size: 17px;
+}
+  
 .container{
     display: grid;
     grid-template-columns: 3fr 3fr 3fr;
     height: 7vh;
     }
     .Diary-party{
-    background-color:#03352a;
-    color: aliceblue;
-    height: 100vh;
+    margin-top: 20px;
+    background-color:#9caaa7;
+    color: azure;
+    margin-left:10px;
+
+    height: 86vh;
     }
-    .NavBar{
-        display: grid;
-        grid-template-columns: 8fr 2fr 1fr;
-        background: rgb(15, 20, 15);
-        color:#fff;
-        padding:20px;
-        font-size:17px;
-    }
-    .NavBar a{
-        text-decoration: none;
-        color:azure;
-        text-transform: uppercase;
-    }
-    .NavBar a:hover{
-        color:green;
-    }
-    .NavBars{
-        display: grid;
-        grid-template-columns: 9fr  1fr;
-        background: rgb(15, 20, 15);
-        color:#fff;
-        padding:20px;
-        font-size:17px;
-    }
-    .NavBars a{
-        text-decoration: none;
-        color:azure;
-        text-transform: uppercase;
-    }
-    .NavBars a:hover{
-        color:green;
-    }
-    #logo a{
-        text-decoration: none;
-        color:azure;
-        font-weight:italic;
-        
-    } 
- 
+   
 .footer{
-    background-color: rgb(1, 13, 14);
-    margin-top:160px;
-    height:7vh;
+     background-color: rgb(1, 13, 14);
+    height:2vh;
     color:#fff;
-    text-align:center;
+    text-align:center; 
+    
 }
    
     
