@@ -72,6 +72,7 @@ class myDiary {
                 token
             }
         });
+
     }
 }
 
