@@ -59,7 +59,7 @@ text-align: center;
     background-color: rgb(41, 43, 43);
     margin: 0px 28% 0px 16%;
     height: 85vh;
-}
+
 
 .buttons input[type=text],input[type=password]{
     height: 4vh;
@@ -90,13 +90,17 @@ text-align: center;
 }
 
 .notification-side p{
+
     margin: 15px;
+
 }
 .notifications a{
     text-decoration: none;
     color: green;
     text-transform: uppercase;
+
     padding: 15px;
+
 }
 
   .save{
@@ -171,10 +175,16 @@ th{
     width: 80%;
     margin-top: 100px;
     
+
+}
+td{
+    font-size: 20px;
+
 }
 td{
     font-size: 20px;
 }
+
 
 
 td a{
@@ -203,7 +213,9 @@ td a:hover{
 
 }
 .controls{
+
     margin-top: 170px;
+
     font-weight: italic;
     font-size: 20px;
     text-transform: uppercase;
@@ -254,13 +266,17 @@ td a:hover{
     padding: 10px; 
 }
 .helps{
+
     background-color: rgb(66, 65, 65);
+
+ 
     font-family: 'Slabo 10px', serif;  
 }
 .helps p{
     color: azure;
     max-width: 80%;
     font-size: 19px;
+
     padding: 10px 7% 20px 10%;
 
 }
@@ -275,7 +291,6 @@ td a:hover{
 .message{
     margin-top: 100px;
 }
-
 
 .incoming{
     
@@ -349,6 +364,7 @@ font-size: 17px;
     margin-left:10px;
 
     height: 97vh;
+
     }
    
 .footer{
