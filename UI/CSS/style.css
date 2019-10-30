@@ -2,7 +2,7 @@
     margin: 0 ;
     padding: 0 ;
 }
-body{
+ html, body{
     font-family: 'Times New Roman', Times, serif;
     background-image:linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba(0, 0, 0, 0.5)), url("../assets/italy-1587287_960_720.jpg");
     background-size: cover;
@@ -41,6 +41,7 @@ body{
 
 }
 .myDiary{
+   
     margin-left: auto;
     margin-right: auto;
      margin-top: 150px;
@@ -63,6 +64,7 @@ body{
     margin-right: auto;
     border-radius: 13px;
     margin-bottom: 150px;
+    
  
 }
 .welcome a:hover{
@@ -252,17 +254,18 @@ color: white;
     text-decoration: none;
 color: white;
 }
-.footer{
-    background-color:rgb(10, 10, 10);
-    padding: 20px;
-    color:azure;
-    position: flex;
-
-    height: 1vh;
-    font-size: 15px;
-    text-align: center;  
-     margin-top: 250px;
-} 
+ .footer{
+        background-color:rgb(10, 10, 10);
+        padding: 20px;
+        color:azure;
+        position: absolute;
+        width: 100%;
+       bottom:-95px;
+        height: 1vh;
+        font-size: 15px;
+        text-align: center;  
+         margin-top: 250px;
+    } 
 
 
 
