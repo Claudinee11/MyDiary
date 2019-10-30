@@ -1,0 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-image:linear-gradient( rgba( 0, 0, 0, 0.6 ), rgba(0, 0, 0, 0.5)), url("../assets/italy-1587287_960_720.jpg");
+    background-size: cover;
+    height: 100%;
+    
+}
+
+.Nav{
+     top:0; 
+    background-color: rgb(120, 124, 120);
+    color: rgb(242, 243, 247);
+    display: grid;
+    grid-template-columns: 7fr 1fr 1fr 1fr;
+    height: 80px;
+    
+}
+#btn{
+    padding: 20px;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+#btn a{
+    text-decoration: none;
+    color: azure;
+}
+#btn a:hover{
+    color: blanchedalmond;
+}
+ #time {
+padding: 3px;
+font-size: 20px;
+    
+}
+.entryFb{
+    min-height:100%;
+    position: relative; 
+}
+.first{
+
+display: grid;
+grid-template-columns: 3fr 3fr 3fr;
+margin: 20px 20px 0px 40px ;
+}
+
+.paragraph{
+    max-width: 80%;
+    background-color: grey;
+}
+.paragraph p{
+    margin-left: 20px;
+    font-size:25px;
+    margin-right: 20px;
+    color: azure;
+}
+.paragraph h1{
+    margin-left: 30px;
+    font-size: 15px;
+    color:azure
+}
+.second{
+    padding-bottom: 20px;
+}
+.third{
+    height:100%;
+
+}
+
+.entry-button{
+    height: 38px;
+    background: #546354;
+    border: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:azure;
+    margin:5px;
+    margin-left:250px;
+    text-transform:uppercase;
+    border-radius:10px;
+       
+
+}
+.entryButtons{
+ display: flex;
+ height: 38px;
+ background: white;
+ width: 100px;
+border-radius: 8px;
+box-sizing:border-box;
+ outline: none;
+border: none;
+float: right;
+margin-right: 100px;
+text-transform:uppercase;
+justify-content: center;
+
+}
+.entryButtons a{
+   text-decoration: none;
+   text-align: center;
+}
+ .entryButtons a :hover{
+    color:#4a884a;
+}
+.entries-button{
+    height: 38px;
+    background: #546354;
+    border: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color:#fff;
+    margin:5px;
+    text-transform:uppercase;
+    text-align: center;
+   
+    border-radius:10px;
+    box-sizing:5px;
+}
+.entry-button a{
+    text-decoration: none;
+    color:#fff;
+    font-size:20px;
+}
+
+.entries-button a{
+text-decoration: none;
+color: white;
+}
+.entryButton{
+    height: 38px;
+    background: #546354;
+    margin-top: 25px;
+    width: 100px;
+   color:#fff;
+   border-radius: 15px;
+   box-sizing:border-box;
+   outline: none;
+   border: none;
+   padding: 10px;
+   margin:30px;
+   text-align: center;
+   text-transform:uppercase;  
+}
+.entryButton a{
+    color:#fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+ .entryButton a:hover{
+    background:#546354;
+}
+.footer{
+    background-color: rgb(15, 22, 15);
+    color: blanchedalmond;
+    padding: 20px;
+    height: 20px;
+    position: absolute;
+    width: 99.2%;
+    bottom: 0;
+}
+.footer p{
+    text-align: center;
+}
+
+

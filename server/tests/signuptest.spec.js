@@ -74,4 +74,84 @@ describe('POST user creating an account without lastname', () => {
             });
     });
 });
-;
+describe('POST user creating an account successfully', () => {
+    it('user should return success message', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signup')
+            .set('Accept', 'application/json')
+            .send(userInformation[5])
+            .end((err, res) => {
+                expect(res.status).to.equals(201);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(201);
+
+                done();
+            });
+    });
+});
+
+describe('POST user login successfully', () => {
+    it('user should return status ok', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[6])
+            .end((err, res) => {
+                expect(res.status).to.equals(201);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(201);
+
+                done();
+            });
+    });
+});
+describe('POST user login fail', () => {
+    it('user should return invalid email', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[7])
+            .end((err, res) => {
+                expect(res.status).to.equals(400);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(400);
+
+                done();
+            });
+    });
+});
+describe('POST user login fail', () => {
+    it('user should return invalid password', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[8])
+            .end((err, res) => {
+                expect(res.status).to.equals(400);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(400);
+
+                done();
+            });
+    });
+});
+describe('POST user login fail', () => {
+    it('user should return data does not match', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[8])
+            .end((err, res) => {
+                expect(res.status).to.equals(400);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(400);
+
+                done();
+            });
+    });
+});

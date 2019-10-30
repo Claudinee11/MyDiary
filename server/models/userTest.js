@@ -32,10 +32,31 @@ const userInformation = [
     
     {
         firstname: 'claudine',
-        lastname: 'niyonsab',
+        lastname: 'niyonsaba',
         email: 'niyoclaudine1@gmail.com',
         password: '12coco1',
     },
+    {
+        email:'niyoclaudine1@gmail.com',
+        password:'12coco1'
+
+    },
+    {
+        email:'niyoclaudine1.com',
+        password:'12coco1'
+
+    },
+    {
+        email:'niyoclaudine1@gmail.com',
+        password:''
+
+    },
+    {
+        email:'niyoclaudine1@gmail.com',
+        password:'12co'
+
+    },
+
 
 
 

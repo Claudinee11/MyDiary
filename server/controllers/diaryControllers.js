@@ -23,7 +23,7 @@ class MyDiaryEntries {
       data: diaryEntries
     });
   }
-  static ModifyEntry (req, res)  {
+  static ModifyEntry(req, res) {
     const {
       title, description,
     } = req.body;
@@ -60,16 +60,16 @@ class MyDiaryEntries {
     });
   }
 
-  static getAllEntries (req, res) {
+  static getAllEntries(req, res) {
     const entryAuth = decryptEmail(req.header('token'));
-  mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
-    const userEntries = mydiaryEntry.filter((entry) => entry.Email=== entryAuth); 
-      console.log(userEntries);
+    mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
+    const userEntries = mydiaryEntry.filter((entry) => entry.Email === entryAuth);
+    console.log(userEntries);
     if (!userEntries.length === 0) {
       return res.status(404).send({
         status: 404,
         message: 'entry does not found',
-        
+
       });
     }
     return res.status(200).send({
@@ -79,18 +79,18 @@ class MyDiaryEntries {
     });
   }
 
-  static specificEntries (req, res){
+  static specificEntries(req, res) {
     const { EntriesId } = req.params;
     console.log(EntriesId);
-    if(isNaN(EntriesId)){
+    if (isNaN(EntriesId)) {
       return res.status(400).json({
-        status:400,
-        error:'id should be a number '
+        status: 400,
+        error: 'id should be a number '
       });
     }
     const entryAuth = decryptEmail(req.header('token'));
     console.log(decryptEmail);
-    const specificEntry = mydiaryEntry.find((entry) => entry.id === parseInt(EntriesId, 10)); 
+    const specificEntry = mydiaryEntry.find((entry) => entry.id === parseInt(EntriesId, 10));
     if (!specificEntry) {
       return res.status(404).send({
         status: 404,
@@ -110,8 +110,8 @@ class MyDiaryEntries {
     });
   }
 
-  static deletedEntries (req, res) {
-    
+  static deletedEntries(req, res) {
+
     const { EntriesId } = req.params;
     if (isNaN(EntriesId)) {
       return res.status(400).send({
@@ -119,7 +119,7 @@ class MyDiaryEntries {
         error: 'id should be a number',
       });
     }
-    const entryAuth =decryptEmail(req.header('token'));
+    const entryAuth = decryptEmail(req.header('token'));
     const deletEntry = mydiaryEntry.find((entry) => entry.id === parseInt(EntriesId, 10));
     if (!deletEntry) {
       return res.status(404).send({
@@ -127,21 +127,21 @@ class MyDiaryEntries {
         message: 'entries does not found',
       });
     }
-    
+
     if (deletEntry.Email !== entryAuth) {
       return res.status(403).send({
         status: 403,
         message: 'You are not user',
       });
     }
-  mydiaryEntry.splice(mydiaryEntry.indexOf(deletEntry), 1);
-       return res.status(200).send({
+    mydiaryEntry.splice(mydiaryEntry.indexOf(deletEntry), 1);
+    return res.status(200).send({
       status: 200,
       message: 'entry successfully deleted',
-      
+
     });
   }
- 
+
 
 
 }
