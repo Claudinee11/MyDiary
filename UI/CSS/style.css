@@ -247,6 +247,7 @@ color: white;
     margin-left: 200px;
     margin-bottom: 80px;   
 }
+
 .entry-buttons a{
     text-decoration: none;
 color: white;
@@ -256,7 +257,7 @@ color: white;
     padding: 20px;
     color:azure;
     position: flex;
-    /* color: rgb(10, 10, 10); */
+
     height: 1vh;
     font-size: 15px;
     text-align: center;  
