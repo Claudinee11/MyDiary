@@ -4,8 +4,9 @@
   "description": "MyDiary is an online journal where users can pen down their thoughts and feelings",
   "main": "index.js",
   "scripts": {
-    "test": " nyc --reporter=html --reporter=text mocha --require @babel/register --require @babel/polyfill --timeout 30000 server/tests/*.spec.js --exit",
+    "test": "mocha --require @babel/register --require @babel/polyfill --timeout 3000 server/tests/*.spec.js --exit",
     "start": "babel-node index.js ",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "dev": "nodemon --exec babel-node index.js",
     "lint": "eslint ./server"
   },
@@ -30,6 +31,7 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.0.7",
     "dotenv": "^8.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",

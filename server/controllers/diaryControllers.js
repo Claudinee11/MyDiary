@@ -17,8 +17,8 @@ class MyDiaryEntries {
     const diaryEntries = new Diary(id, title, date, description, entryAuth);
     mydiaryEntry.push(diaryEntries);
 
-    return res.status(200).send({
-      status: 200,
+    return res.status(201).send({
+      status: 201,
       message: 'User created successfully',
       data: diaryEntries
     });
