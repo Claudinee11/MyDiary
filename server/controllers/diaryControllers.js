@@ -44,9 +44,9 @@ class MyDiaryEntries {
       });
     }
     if (ModifiedEntry.Email !== entryAuth) {
-      return res.status(403).send({
-        status: 403,
-        message: 'you are not user'
+      return res.status(404).send({
+        status: 404,
+        message: 'does not found'
       });
     }
 
@@ -62,7 +62,7 @@ class MyDiaryEntries {
 
   static getAllEntries(req, res) {
     const entryAuth = decryptEmail(req.header('token'));
-    mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId))
+    mydiaryEntry.sort((a, b) => (b.EntriesId) - (a.EntriesId));
     const userEntries = mydiaryEntry.filter((entry) => entry.Email === entryAuth);
     console.log(userEntries);
     if (!userEntries.length === 0) {
@@ -98,8 +98,8 @@ class MyDiaryEntries {
       });
     }
     if (specificEntry.Email !== entryAuth) {
-      return res.status(403).send({
-        status: 403,
+      return res.status(404).send({
+        status: 404,
         message: 'You are not user',
       });
     }
@@ -129,8 +129,8 @@ class MyDiaryEntries {
     }
 
     if (deletEntry.Email !== entryAuth) {
-      return res.status(403).send({
-        status: 403,
+      return res.status(404).send({
+        status: 404,
         message: 'You are not user',
       });
     }

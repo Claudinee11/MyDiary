@@ -5,13 +5,13 @@ import chaiHTTP from 'chai-http';
 
 import userInformation from '../models/userTest';
 
-import app from '../../index';
+import app from '../server';
 
 chai.use(chaiHTTP);
 
 
-describe('POST user creating an account with invalid email', () => {
-    it('user should return status of bad requested', (done) => {
+describe('Testing sign up', () => {
+    it('user should return invalid input', (done) => {
         chai
             .request(app)
             .post('/api/v1/auth/signup')
@@ -25,9 +25,9 @@ describe('POST user creating an account with invalid email', () => {
                 done();
             });
     });
-});
-describe('POST user creating an account without password', () => {
-    it('user should return status of bad requested', (done) => {
+
+
+    it('user should return incorect data', (done) => {
         chai
             .request(app)
             .post('/api/v1/auth/signup')
@@ -41,9 +41,9 @@ describe('POST user creating an account without password', () => {
                 done();
             });
     });
-});
-describe('POST user creating an account without firstname', () => {
-    it('user should return status of bad requested', (done) => {
+
+
+    it('user should return invalid first name', (done) => {
         chai
             .request(app)
             .post('/api/v1/auth/signup')
@@ -57,9 +57,9 @@ describe('POST user creating an account without firstname', () => {
                 done();
             });
     });
-});
-describe('POST user creating an account without lastname', () => {
-    it('user should return status of bad requested', (done) => {
+
+
+    it('user should return invalid lastname', (done) => {
         chai
             .request(app)
             .post('/api/v1/auth/signup')
@@ -73,40 +73,67 @@ describe('POST user creating an account without lastname', () => {
                 done();
             });
     });
+    it('should return user created successfully', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signup')
+            .set('Accept', 'application/json')
+            .send(userInformation[5])
+            .end((err, res) => {
+                expect(res.status).to.equals(201);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(201);
+
+                done();
+            });
+    });
+    it('should return email already exist', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signup')
+            .set('Accept', 'application/json')
+            .send(userInformation[10])
+            .end((err, res) => {
+                expect(res.status).to.equals(409);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(409);
+
+                done();
+            });
+    });
 });
-describe('POST user login fail', () => {
+describe('testing login', () => {
     it('user should return invalid email', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[6])
+            .end((err, res) => {
+                expect(res.status).to.equals(400);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(400);
+
+                done();
+            });
+    });
+
+    it('user should return invalid password', (done) => {
         chai
             .request(app)
             .post('/api/v1/auth/signin')
             .set('Accept', 'application/json')
             .send(userInformation[7])
             .end((err, res) => {
-                expect(res.status).to.equals(400);
+                expect(res.status).to.equals(401);
                 expect(res.body).to.be.an('object');
-                expect(res.body.status).to.equals(400);
+                expect(res.body.status).to.equals(401);
 
                 done();
             });
     });
-});
-describe('POST user login fail', () => {
-    it('user should return invalid password', (done) => {
-        chai
-            .request(app)
-            .post('/api/v1/auth/signin')
-            .set('Accept', 'application/json')
-            .send(userInformation[8])
-            .end((err, res) => {
-                expect(res.status).to.equals(400);
-                expect(res.body).to.be.an('object');
-                expect(res.body.status).to.equals(400);
 
-                done();
-            });
-    });
-});
-describe('POST user login fail', () => {
+
     it('user should return data does not match', (done) => {
         chai
             .request(app)
@@ -114,11 +141,27 @@ describe('POST user login fail', () => {
             .set('Accept', 'application/json')
             .send(userInformation[8])
             .end((err, res) => {
-                expect(res.status).to.equals(400);
+                expect(res.status).to.equals(404);
                 expect(res.body).to.be.an('object');
-                expect(res.body.status).to.equals(400);
+                expect(res.body.status).to.equals(404);
 
                 done();
             });
     });
+    it('login successfully', (done) => {
+        chai
+            .request(app)
+            .post('/api/v1/auth/signin')
+            .set('Accept', 'application/json')
+            .send(userInformation[9])
+            .end((err, res) => {
+ 
+         expect(res.status).to.equals(201);
+                expect(res.body).to.be.an('object');
+                expect(res.body.status).to.equals(201);
+
+                done();
+            });
+    });
+   
 });
