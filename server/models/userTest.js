@@ -37,24 +37,30 @@ const userInformation = [
         password: '12coco1',
     },
     {
-        email:'niyoclaudine1@gmail.com',
-        password:'12coco1'
-
-    },
-    {
-        email:'niyoclaudine1.com',
+        email:'niyoclaudine1gmail.com',
         password:'12coco1'
 
     },
     {
         email:'niyoclaudine1@gmail.com',
-        password:''
+        password:'12c'
+
+    },
+    {
+        email:'cocoaime2@gmail.com',
+        password:'rtshjfbv'
 
     },
     {
         email:'niyoclaudine1@gmail.com',
-        password:'12co'
+        password:'12coco1'
 
+    },
+    {
+        firstname: 'claudine',
+        lastname: 'niyonsaba',
+        email: 'niyoclaudine1@gmail.com',
+        password: '12coco1',
     },
 
 

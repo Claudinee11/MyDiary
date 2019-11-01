@@ -1,6 +1,6 @@
 const userEntries = [
     {
-        title:'',
+        title:'happiness',
         description:'wake up with determination'
     },
     {
@@ -11,6 +11,15 @@ const userEntries = [
         title:'success',
         description:'wake up with determination'
     },
+    {
+        title:'',
+        description:'wake up with determination'
+    },
+    {
+        title:"events",
+        description:"how i demonstrate a growth mindset"
+    },
+
     
 ]
 
