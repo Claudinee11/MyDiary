@@ -19,6 +19,10 @@ const userEntries = [
         title:"events",
         description:"how i demonstrate a growth mindset"
     },
+    {
+        title:"event",
+        description:"birthday"
+    },
 
     
 ]

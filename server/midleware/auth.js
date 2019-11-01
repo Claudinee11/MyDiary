@@ -15,7 +15,7 @@ const auth = (req, res, next) => {
     const userEntry = decryptEmail(token);
   
     const usersEntry = mydiaryUser.find(user => user.Email === userEntry.email);
-    console.log(userEntry);
+    
     if (!usersEntry) {
       return res.status(401).json({
         status: 401,

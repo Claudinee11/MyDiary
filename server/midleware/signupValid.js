@@ -5,7 +5,7 @@ const signupValidation = (req, res, next) => {
         firstname: Joi.string().strict().trim().min(4).max(50).required(),
         lastname:Joi.string().strict().trim().min(4).max(50).required(),
         email: Joi.string().strict().trim().min(2).email().required(),
-        password: Joi.string().alphanum().min(2).required()
+        password: Joi.string().alphanum().min(2).trim().required()
     }
 
     const user = Joi.validate(req.body, userValidation);

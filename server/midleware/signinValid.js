@@ -2,8 +2,8 @@ import Joi from 'joi';
 
 const signValidation = (req, res, next) => {
     const DiaryValidation = {
-        email: Joi.string().strict().email().required(),
-        password: Joi.string().strict().alphanum().required()
+        email: Joi.string().strict().trim().email().required(),
+        password: Joi.string().strict().trim().alphanum().required()
     }
     const UserDiaries = Joi.validate(req.body, DiaryValidation);
     if (UserDiaries.error) {
